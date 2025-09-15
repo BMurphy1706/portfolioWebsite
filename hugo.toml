@@ -1,0 +1,4 @@
+baseURL = 'https://ben-murphy.dev/'
+languageCode = 'en-us'
+title = 'ben-murphy.dev'
+theme = 'LucentLink-Hugo'

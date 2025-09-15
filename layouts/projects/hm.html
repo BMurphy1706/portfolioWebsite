@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{ partial "head.html" . }}
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <div class="container mx-auto px-4 py-12 max-w-md">
+       <!-- Title Section -->
+        {{ partial "profile.html" . }}
+
+         <div class="bg-white bg-opacity-10 rounded-lg p-6 mb-6 border border-white border-opacity-20">
+        <h2 class="text-xl font-bold mb-4">Premise</h2>
+        <div class="space-y-4"><div>
+        <p class="text-sm opacity-80">At the beginning of this project I was given code that by using a dynamic array recreted a game wherein a player controlled character had to collect falling elements. The array was populated with 1s and 0s. Every move taken would advance the array by one row<br><br>
+        If the character passed through as 1 as it fell you got a point, 0s awarded nothing. <br><br>
+        With this foundation I was tasked with creating an algorithm to achieve as high of a score as possible without knowing the array's contents.</p>
+        </div></div></div>
+
+        
+        <div class="bg-white bg-opacity-10 rounded-lg p-6 mb-6 border border-white border-opacity-20">
+        <h2 class="text-xl font-bold mb-4">Motivation</h2>
+        <div class="space-y-4"><div>
+        <p class="text-sm opacity-80">This idea was originally given as a final project for my C module in college, however my lecturer decided to run a compeition after the submission date to see which student's aglorithm produced the best results. This had me quite interested.
+        </p>
+        </div></div></div>
+
+        <div class="bg-white bg-opacity-10 rounded-lg p-6 mb-6 border border-white border-opacity-20">
+        <h2 class="text-xl font-bold mb-4">Implementation</h2>
+        <div class="space-y-4"><div>
+        <p class="text-sm opacity-80">I opted for a dynamic programming approach to this problem. As this algorithm would be ran every time a new line from the array appeared on screen it dynamic programming seemed a good choice to use since it focuses around recursive decomposition of problems into smaller problems.</p>
+        <br><br>
+        <h3 class="font-semibold mb-2">The Alogorithm</h3>
+        <p  class="text-sm opacity-80">Whenever a move needs to be decided my algorithm does 2 main functions.<br><br>Firstly it determines what the character can and cannot reach from it's current position.<br><br>Secondly for each position the character can reach a calculation is done to find out what the highest possible score from said position is. The highest score for each position is then stored in an array and is refferenced to determine the scores for adjacent positions.<br><br>
+        When these calculations finish the cascading calculations will hav formed a triangle of the highest possible value and the character will move to allign itself with the top of this triangle.
+        </p><br>
+        <h3 class="font-semibold mb-2">Original Array</h3>
+        <p  class="text-sm opacity-80">The 2 in the array represents the character</p>
+        <img src="/images/arr.png" alt="Array">
+        <h3 class="font-semibold mb-2">Calculation Array</h3>
+        <p  class="text-sm opacity-80">Due to how the calculations opperate this array prints vertically inverted</p>
+        <img src="/images/calc.png" alt="Calculation Array">
+        </div></div></div>
+
+         <div class="bg-white bg-opacity-10 rounded-lg p-6 mb-6 border border-white border-opacity-20">
+        <h2 class="text-xl font-bold mb-4">Challenges</h2>
+        <div class="space-y-4"><div>
+        <h3 class="font-semibold mb-2">Inconsistent Tie-breakers</h3>
+        <p class="text-sm opacity-80">  Although my designed algorithm worked very well when there was only a sinlge instance of a given highest number on a given row, it faltered when more than one of the same highest number was present in the same row. <br><br>
+        This has shown me the importance of well designed tie-breakers and I'll make sure to improve my methods for such going forwards.</p>
+
+        </div></div></div>
+
+        <div class="bg-white bg-opacity-10 rounded-lg p-6 mb-6 border border-white border-opacity-20">
+        <h2 class="text-xl font-bold mb-4">The Outcome</h2>
+        <div class="space-y-4"><div>
+        <p class="text-sm opacity-80">My algorithm provided a satisfactpry high score.<br><br>
+        Although it would not consistently produce the highest score, when it differed it was off by an average between 2 and 3 from the highest possible score which still falls within good margins.</p>
+        </div></div></div>
+
+
+       
+        <footer class="text-center text-xs opacity-60">
+            © 2025 LucentLink | Made with ❤️
+        </footer>
+        
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

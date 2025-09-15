@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ .Title }}</h1>
+    </header>
+    <main>
+        <div>
+            {{ .Content }} <!-- This will render the content of the page -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; {{ now.Format "2006" }} Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
